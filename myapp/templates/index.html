@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+{%load static%}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Index</title>
+    <link rel="stylesheet" href="">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz" crossorigin="anonymous"></script>
+
+</head>
+<body>
+  {%for m in messages%}
+        {{m}}
+    {%endfor%}
+
+    <nav class="navbar navbar-expand-lg navbar-light bg-light btn btn-outline-warning">
+        <div class="container-fluid">
+          <a class="navbar-brand" href="/">Welcome </a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+              <li class="nav-item">
+                <a class="nav-link active" aria-current="page" href="{%url 'doctorlist'%}">Doctors</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="{%url 'doctorcreate'%}">Add Doctor</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="{%url 'appointment'%}">Add Appointment</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="{%url 'appointmentlist'%}">AppointmentList</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="{%url 'departmentcreate'%}">Department</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="{%url 'departmentlist'%}">Department List</a>
+              </li>
+              <li class="nav-item">
+              </li>
+
+            
+             
+             
+            </ul>
+            {% if user.is_authenticated %}
+            <form class="d-flex" >
+              <a class="nav-link" href="#">Welcome {{request.user}}</a>
+              <a href="{%url 'signout'%}" class="btn btn-outline-success mx-4" type="submit">Logout</a>
+
+              {% endif %}
+
+                
+          </div>
+        </div>
+      </nav>
+
+<div>
+  <div id="carouselExample" class="carousel slide">
+    <div class="carousel-inner">
+      <div class="carousel-item active">
+        <img src="{%static 'images/HMS5.webp'%}" class="d-block w-100" style="height: 600px;" alt="...">
+      </div>
+</div>
+
+     
